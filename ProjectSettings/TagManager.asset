@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - Back
+  - Object
+  - Chara
+  - TopObject
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3838353279
+    locked: 0
+  - name: Objects
+    uniqueID: 2773591709
+    locked: 0
+  - name: Charactor
+    uniqueID: 3792630393
+    locked: 0
+  - name: TopObejct
+    uniqueID: 536474353
+    locked: 0
+  - name: SelectedCharactor
+    uniqueID: 3949776185
+    locked: 0
