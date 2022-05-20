@@ -1,5 +1,4 @@
-﻿using System;
-namespace Character
+﻿namespace Model.Character
 {
     public enum Attribute
     {

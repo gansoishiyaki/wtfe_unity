@@ -2,22 +2,21 @@ trigger_effects:
   # キューブ化、戦闘後相手の防御、機動ステータスダウン
   - id: alektor_cube_to_be
     exec_type: after # 戦闘後
-    target: enemy
-    rete_type: hit # 攻撃命中時
+    target_type: enemy
+    rate_type: hit # 攻撃命中時
     # rate: all
-    effects:
+    grants:
       - cube_to_be
   # キューブ化
   - id: alektor_cube
     exec_type: after
-    target: enemy
+    target_type: enemy
     rate_type: dumage # ダメージを与えた時
-    range: 2
-    effects:
+    grants:
       - cube # その場にキューブが出現する
   - id: alektor_guard
     exec_type: begin
-    target: self
+    target_type: self
     rate_type: teh
-    effects:
+    grants:
       - cube

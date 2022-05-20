@@ -1,30 +1,30 @@
 characters:
-  id: hyrain
-  name: ハイレイン
-  attributes:
-    - neighbor
-    - captain
-    - aftkrator
-  triggers:
-    - alektor
-  skills:
-    - cube_absorption
+  - id: hyrain
+    name: ハイレイン
+    attributes:
+      - neighbor
+      - captain
+      - aftkrator
+    triggers:
+      - alektor
+    skills:
+      - cube_absorption
 
-  level: 10
-  maxhp: 30
-  atk: 15
-  def: 18
-  teh: 16
-  spd: 10
-  luk: 3
-  move: 2
-  conducting: 10
-  move_type: walk
+    level: 10
+    maxhp: 30
+    atk: 15
+    def: 18
+    teh: 16
+    spd: 10
+    luk: 3
+    move: 2
+    conducting: 3
 
-  rate:
-    mahhp: 120
-    atk: 50
-    def: 60
-    teh: 35
-    spd: 30
-    luk: 10
+    rate:
+      hp: 120
+      atk: 50
+      def: 60
+      teh: 35
+      spd: 30
+      luk: 10
+      conducting: 30

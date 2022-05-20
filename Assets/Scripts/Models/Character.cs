@@ -16,34 +16,62 @@ namespace Model.Character
         public string name;
 
         // 初期ステータス
+        public int level;
+        public int maxhp;
         public int atk;
         public int def;
         public int teh;
         public int spd;
         public int spe;
         public int luk;
-        public int move;
-        public int conducting;
-        public string move_type;
+        public int move = 2;
+        public int conducting = 0;
+        public string move_type = "";
 
         // 成長率
         public Rate rate;
 
         // 属性
-        public List<Attribute> attributes;
+        public List<string> attributes = new List<string>();
+        public List<string> triggers = new List<string>();
+        public List<string> skills = new List<string>();
 
-        public MoveType moveType
+        /// <summary>
+        /// 移動タイプ
+        /// </summary>
+        public MoveType MoveType
         {
             get { return move_type.ToEnum(MoveType.walk); }
         }
-    }
 
+        /// <summary>
+        /// 属性を持っているか
+        /// </summary>
+        /// <param name="attribute"></param>
+        /// <returns></returns>
+        public bool HasAttributes(Attribute attribute)
+        {
+            return attributes.Contains(attribute.ToString());
+        }
+
+        /// <summary>
+        /// トリガーオブジェクト
+        /// </summary>
+        public List<Trigger.Base> Triggers
+        {
+            get
+            {
+                var tc = GameController.getInstance.systemData.triggerController;
+                return triggers.ConvertAll(t => tc.models[t]);
+            }
+        }
+    }
 
     /// <summary>
     /// Jsonシリアライズ用
     /// </summary>
     [Serializable]
-    public class CharacterSerializer
+    public class Serializer
     {
         public List<Base> characters;
     }

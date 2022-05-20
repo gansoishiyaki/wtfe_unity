@@ -1,0 +1,19 @@
+{
+  "conditions": [
+    {
+      "id": "cube"
+    },
+    {
+      "id": "cube_to_be",
+      "name": "半キューブ化",
+      "priority": 99,
+      "effects": [
+        {
+          "state_type": "def",
+          "calculate_type": "subtraction",
+          "value": 4
+        }
+      ]
+    }
+  ]
+}
