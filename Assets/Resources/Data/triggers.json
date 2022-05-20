@@ -1,0 +1,21 @@
+{
+  "triggers": [
+    {
+      "id": "alektor",
+      "name": "アレクトール",
+      "atk": 12,
+      "hit": 80,
+      "cri": 0,
+      "range": 2,
+      "is_black": true,
+      "is_single": true,
+      "attack_effects": [
+        "alektor_cube",
+        "alektor_cube_to_be"
+      ],
+      "deffence_effects": [
+        "alektor_guard"
+      ]
+    }
+  ]
+}

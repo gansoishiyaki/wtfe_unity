@@ -1,0 +1,32 @@
+{
+  "trigger_effects": [
+    {
+      "id": "alektor_cube_to_be",
+      "exec_type": "after",
+      "target": "enemy",
+      "rete_type": "hit",
+      "effects": [
+        "cube_to_be"
+      ]
+    },
+    {
+      "id": "alektor_cube",
+      "exec_type": "after",
+      "target": "enemy",
+      "rate_type": "dumage",
+      "range": 2,
+      "effects": [
+        "cube"
+      ]
+    },
+    {
+      "id": "alektor_guard",
+      "exec_type": "begin",
+      "target": "self",
+      "rate_type": "teh",
+      "effects": [
+        "cube"
+      ]
+    }
+  ]
+}

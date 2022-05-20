@@ -1,0 +1,7 @@
+skills:
+  id: cube_absorption
+  name: キューブ吸収
+  exec_type: turn # ターン開始判定
+  range: 2
+  target: object
+  # range_type: normal

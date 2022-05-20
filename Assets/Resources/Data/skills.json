@@ -1,0 +1,9 @@
+{
+  "skills": {
+    "id": "cube_absorption",
+    "name": "キューブ吸収",
+    "exec_type": "turn",
+    "range": 2,
+    "target": "object"
+  }
+}
