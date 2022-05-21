@@ -18,9 +18,9 @@ namespace Resource
             charas = load<Character>($"{resourceDirctory}/characters");
         }
 
-        List<Character> IRepository.IResourceRepository.Characters()
+        Dictionary<string, Character> IRepository.IResourceRepository.Characters()
         {
-            return charas.Values.ToList();
+            return charas;
         }
 
         /// <summary>

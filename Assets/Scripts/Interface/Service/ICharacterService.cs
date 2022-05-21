@@ -1,6 +1,10 @@
 ﻿using Domain;
 
+/// <summary>
+/// プレイヤーが所持するキャラクターに関するサービス
+/// </summary>
 public interface ICharacterService
 {
-    Character Get(string id);
+    public Character Get(string id);
+    public Character Create(string id);
 }

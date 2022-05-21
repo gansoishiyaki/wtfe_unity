@@ -5,7 +5,7 @@ namespace IRepository
 {
     public interface IResourceRepository
     {
-        public List<Character> Characters();
+        public Dictionary<string, Character> Characters();
     }
 }
 

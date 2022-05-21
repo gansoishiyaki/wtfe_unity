@@ -6,7 +6,9 @@ using IRepository;
 /// </summary>
 public class Registory
 {
-    public static void SetUp(IResourceRepository resource)
+    public ICharacterService chara;
+
+    public Registory(IResourceRepository resource)
     {
 
     }

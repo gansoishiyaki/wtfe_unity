@@ -10,6 +10,8 @@ public class Main
     // private
     private static Main main; // インスタンス
 
+    private Registory registory;
+
     /// <summary>
     /// コンストラクタ
     /// 外部から呼び出し不可
@@ -30,13 +32,13 @@ public class Main
     static void OnRuntimeMethodLoad()
     {
         // 初期化処理
-        _ = Default;
+        _ = Get;
     }
 
     /// <summary>
     /// インスタンス取得
     /// </summary>
-    public static Main Default
+    public static Main Get
     {
         get
         {

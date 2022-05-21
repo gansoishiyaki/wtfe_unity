@@ -19,8 +19,10 @@ namespace Domain
         public int luk;
         public int move = 2;
         public int conducting = 0;
+        public MoveType moveType = MoveType.walk;
+        public List<CharacterAttribute> attributes;
 
-        public int exp;
+        public int exp = 0;
         //public MoveType moveType;
     }
 }
