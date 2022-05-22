@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System;
 
 namespace Domain
 {
@@ -23,6 +22,5 @@ namespace Domain
         public List<CharacterAttribute> attributes;
 
         public int exp = 0;
-        //public MoveType moveType;
     }
 }

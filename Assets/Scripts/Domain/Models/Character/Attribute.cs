@@ -1,9 +1,7 @@
-﻿namespace Resource
+﻿public enum CharacterAttribute
 {
-    public enum CharacterAttribute
-    {
-        captain,
-        neighbor,
-        aftkrator
-    }
+    none,
+    captain,
+    neighbor,
+    aftkrator
 }

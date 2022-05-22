@@ -7,7 +7,7 @@ namespace Resource
     /// トリガー効果
     /// </summary>
     [Serializable]
-    public class TriggerEffect : Base
+    public class TriggerEffect : JSONSerializer.Base
     {
         public string exec_type;
         public string target_type;

@@ -22,7 +22,11 @@ public class Main
         // Screen.SetResolution(width: Const.GameMain.Witdh, height: Const.GameMain.Height, false, Const.GameMain.RefreshRate);
 
         // JSON読み込み初期化
-        //IRepository.IResourceRepository json = new Resource.JSONHandler("Data");
+        var json = new Resource.JSONHandler("Data");
+        var store = new DataStore.JSON.Handler("");
+
+        // レジストリ管理
+        registory = new Registory(json, store);
     }
 
     /// <summary>

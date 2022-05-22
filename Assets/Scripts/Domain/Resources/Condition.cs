@@ -7,7 +7,7 @@ namespace Resource
     /// 状態
     /// </summary>
     [Serializable]
-    public class Condition : Base
+    public class Condition : JSONSerializer.Base
     {
         public string name;
         public int priority;

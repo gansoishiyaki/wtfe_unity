@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace IRepository
 {
-    public interface IResourceRepository
+    public interface IResource
     {
         public Dictionary<string, Character> Characters();
     }

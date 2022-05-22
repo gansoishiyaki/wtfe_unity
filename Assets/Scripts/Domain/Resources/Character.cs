@@ -4,10 +4,10 @@ using System;
 namespace Resource
 {
     /// <summary>
-    /// キャラクターベース
+    /// キャラクター
     /// </summary>
     [Serializable]
-    public class Character : Base
+    public class Character : JSONSerializer.Base
     {
         // 表示名
         public string name;

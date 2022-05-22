@@ -6,5 +6,5 @@
 public interface ICharacterService
 {
     public Character Get(string id);
-    public Character Create(string id);
+    public void Create(string id);
 }

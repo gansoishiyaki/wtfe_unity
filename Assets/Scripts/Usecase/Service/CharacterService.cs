@@ -1,49 +1,50 @@
-﻿using System;
-using Domain;
+﻿using Domain;
+using Domain.Converter;
 using IRepository;
 
 /// <summary>
-/// キャラクターサービス
+/// 通常時のキャラクターに関するサービス
 /// </summary>
 public class CharacterService : ICharacterService
 {
-    private IResourceRepository resource;
+    private IResource resource;
+    private IRepository.DataStore.ICharacter storeChara;
 
     /// <summary>
     /// コンストラクタ
     /// </summary>
     /// <param name="resource"></param>
-    public CharacterService(IResourceRepository resource)
+    public CharacterService(
+        IResource resource,
+        IRepository.DataStore.ICharacter store
+    )
     {
         this.resource = resource;
+        this.storeChara = store;
     }
 
-    Character ICharacterService.Create(string id)
+    /// <summary>
+    /// キャラクター生成
+    /// </summary>
+    /// <param name="id"></param>
+    void ICharacterService.Create(string id)
     {
-        var rChara = resource.Characters()[id];
-        var chara = new Character();
+        var resourceCharacter = resource.Characters()[id];
+        var storeCharacter = resourceCharacter.ToStore();
 
-        // 各パラメータの初期値取得
-        chara.id = id;
-        chara.level = rChara.level;
-        chara.name = rChara.name;
-        chara.maxhp = rChara.maxhp;
-        chara.hp = rChara.maxhp;
-        chara.atk = rChara.atk;
-        chara.def = rChara.def;
-        chara.teh = rChara.teh;
-        chara.spd = rChara.spd;
-        chara.luk = rChara.luk;
-        chara.move = rChara.move;
-        chara.conducting = rChara.conducting;
-
-        // TODO: Storageに登録する
-
-        return chara;
+        storeChara.Add(storeCharacter);
     }
 
+    /// <summary>
+    /// キャラクター取得
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     Character ICharacterService.Get(string id)
     {
-        throw new NotImplementedException();
+        var storeCharacter = storeChara.Get(id);
+        var resourceCharacter = resource.Characters()[id];
+
+        return storeCharacter.ToModel(resourceCharacter);
     }
 }

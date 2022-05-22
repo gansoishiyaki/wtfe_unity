@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 
-namespace Resource
+namespace JSONSerializer
 {
     /// <summary>
     /// ドメインの根幹
@@ -15,8 +15,8 @@ namespace Resource
     /// Jsonシリアライズ用
     /// </summary>
     [Serializable]
-    public class Serializer<T> where T : Base
+    public class List<T> where T : Base
     {
-        public List<T> list;
+        public System.Collections.Generic.List<T> list;
     }
 }

@@ -1,9 +1,7 @@
 ﻿using System;
-namespace Resource
+
+public enum MoveType
 {
-    public enum MoveType
-    {
-        walk,
-        fly
-    }
+    walk,
+    fly
 }

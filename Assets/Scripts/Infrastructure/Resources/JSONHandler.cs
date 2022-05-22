@@ -7,18 +7,16 @@ namespace Resource
     /// <summary>
     /// リソースへのアクセス
     /// </summary>
-    public class JSONHandler : IRepository.IResourceRepository
+    public class JSONHandler : IRepository.IResource
     {
-        string resourceDirctory;
-        Dictionary<string, Character> charas;
+        private Dictionary<string, Character> charas;
 
         public JSONHandler(string resourceDirctory)
         {
-            this.resourceDirctory = resourceDirctory;
             charas = load<Character>($"{resourceDirctory}/characters");
         }
 
-        Dictionary<string, Character> IRepository.IResourceRepository.Characters()
+        Dictionary<string, Character> IRepository.IResource.Characters()
         {
             return charas;
         }
@@ -30,10 +28,10 @@ namespace Resource
         /// <param name="resourceDirctory"></param>
         /// <returns></returns>
         public Dictionary<string, T> load<T>(string resourceDirctory)
-            where T : Base
+            where T : JSONSerializer.Base
         {
             var json = Resources.Load<TextAsset>($"{resourceDirctory}/characters");
-            var serializer = JsonUtility.FromJson<Serializer<T>>(json.text);
+            var serializer = JsonUtility.FromJson<JSONSerializer.List<T>>(json.text);
             return serializer.list.ToDictionary(chara => chara.id);
         }
     }

@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Resource
 {
@@ -7,7 +7,7 @@ namespace Resource
     /// トリガーベース
     /// </summary>
     [Serializable]
-    public class Trigger : Base
+    public class Trigger : JSONSerializer.Base
     {
         public string name;
         public int range = 1;
