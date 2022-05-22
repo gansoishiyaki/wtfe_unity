@@ -16,6 +16,6 @@ public class Registory
     )
     {
         var storeChara = new DataStore.JSON.CharacterRepository(store);
-
+        chara = new CharacterService(resource, storeChara);
     }
 }

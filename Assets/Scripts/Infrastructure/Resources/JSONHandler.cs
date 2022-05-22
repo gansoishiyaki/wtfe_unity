@@ -27,10 +27,10 @@ namespace Resource
         /// <typeparam name="T"></typeparam>
         /// <param name="resourceDirctory"></param>
         /// <returns></returns>
-        public Dictionary<string, T> load<T>(string resourceDirctory)
+        public Dictionary<string, T> load<T>(string path)
             where T : JSONSerializer.Base
         {
-            var json = Resources.Load<TextAsset>($"{resourceDirctory}/characters");
+            var json = Resources.Load<TextAsset>(path);
             var serializer = JsonUtility.FromJson<JSONSerializer.List<T>>(json.text);
             return serializer.list.ToDictionary(chara => chara.id);
         }

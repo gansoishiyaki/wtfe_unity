@@ -7,10 +7,10 @@ using UnityEngine;
 /// </summary>
 public class Main
 {
+    public Registory Registory;
+
     // private
     private static Main main; // インスタンス
-
-    private Registory registory;
 
     /// <summary>
     /// コンストラクタ
@@ -26,7 +26,10 @@ public class Main
         var store = new DataStore.JSON.Handler("");
 
         // レジストリ管理
-        registory = new Registory(json, store);
+        Registory = new Registory(json, store);
+
+        // ダミーデータ作成
+        Dummy.CreateDummyData(Registory);
     }
 
     /// <summary>
