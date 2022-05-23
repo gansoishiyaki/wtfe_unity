@@ -23,9 +23,7 @@ public class StageService : IStageService
 
     Stage IStageService.Detail(string id)
     {
-        var stage = new Stage();
-
-
-        return stage;
+        var res = resource.Stages()[id];
+        return res.ToModel(resource, storeChara);
     }
 }

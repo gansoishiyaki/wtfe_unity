@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 namespace Domain.Converter
 {
     /// <summary>
@@ -6,14 +7,17 @@ namespace Domain.Converter
     static class StageConverter
     {
         public static Stage ToModel(
-            this Resource.Stage resource
+            this Resource.Stage resourceStage,
+            IRepository.IResource resource,
+            IRepository.DataStore.ICharacter storeChara
         )
         {
             var stage = new Stage();
-            stage.id = resource.id;
-            stage.name = resource.name;
-            stage.mapFile = resource.map;
+            stage.id = resourceStage.id;
+            stage.name = resourceStage.name;
+            stage.mapFile = $"{Config.MapDir}/{resourceStage.map}";
 
+            stage.teams = resourceStage.teams.ConvertAll(t => t.ToModel(resource, storeChara));
             return stage;
         }
     }

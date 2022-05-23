@@ -22,7 +22,7 @@ public class Main
         // Screen.SetResolution(width: Const.GameMain.Witdh, height: Const.GameMain.Height, false, Const.GameMain.RefreshRate);
 
         // JSON読み込み初期化
-        var json = new Resource.JSONHandler("Data");
+        var json = new Resource.JSONHandler(Config.ResourceDir);
         var store = new DataStore.JSON.Handler("");
 
         // レジストリ管理
