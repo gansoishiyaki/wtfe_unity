@@ -6,6 +6,7 @@ namespace IRepository
     public interface IResource
     {
         public Dictionary<string, Character> Characters();
+        public Dictionary<string, Stage> Stages();
     }
 }
 

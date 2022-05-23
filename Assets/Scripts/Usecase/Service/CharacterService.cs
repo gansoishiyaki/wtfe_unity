@@ -20,7 +20,7 @@ public class CharacterService : ICharacterService
     )
     {
         this.resource = resource;
-        this.storeChara = store;
+        storeChara = store;
     }
 
     /// <summary>

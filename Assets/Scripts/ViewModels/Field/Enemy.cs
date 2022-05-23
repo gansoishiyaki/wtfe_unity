@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Map.Battle
+namespace ViewModel
 {
-    public class Object : MonoBehaviour
+    public class Enemy : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

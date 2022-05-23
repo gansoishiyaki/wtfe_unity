@@ -28,3 +28,13 @@ list:
       spd: 30
       luk: 10
       conducting: 30
+
+    enemy:
+      level: 40
+      maxhp: 80
+      atk: 28
+      def: 30
+      teh: 25
+      spd: 22
+      luk: 3
+      conducting: 10

@@ -13,7 +13,7 @@ namespace Domain.Converter
         /// <returns></returns>
         public static Character ToModel(this DataStore.Character store, Resource.Character resource)
         {
-            var chara = new Domain.Character();
+            var chara = new Character();
             chara.id = resource.id;
             chara.level = store.level;
             chara.name = store.name;

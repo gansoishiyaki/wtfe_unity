@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Map.Battle
+namespace Component.Field
 {
-    public class Enemy : Character
+    /// <summary>
+    /// キャラクター
+    /// </summary>
+    public class Character
     {
         // Start is called before the first frame update
         void Start()
         {
-            var transform = GetComponent<Transform>();
-            Debug.Log(transform.position);
+
         }
 
         // Update is called once per frame
