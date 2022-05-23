@@ -11,13 +11,15 @@ namespace Component
         // Start is called before the first frame update
         void Start()
         {
+            viewModel = new StageViewModel();
 
-        }
+            // delegate
+            viewModel.createChild = delegate (GameObject obj)
+            {
+                return Instantiate(obj, gameObject.transform);
+            };
 
-        // Update is called once per frame
-        void Update()
-        {
-
+           viewModel.SetUp();
         }
     }
 }

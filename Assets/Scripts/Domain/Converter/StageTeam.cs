@@ -13,9 +13,18 @@ namespace Domain.Converter
         {
             var team = new StageTeam();
             team.isPlayer = resourceStage.is_player;
-            team.characters = resourceStage.charas.ConvertAll(
-                c => c.ToModel(resource.Characters()[c.id], storeChara.Get(c.id))
-            );
+
+            if(team.isPlayer)
+            {
+                // TODO: プレイヤーのチーム反映
+            }
+            else
+            {
+                team.characters = resourceStage.charas
+                    .ConvertAll(
+                    c => c.ToModel(resource.Characters()[c.id], storeChara.Get(c.id))
+                );
+            }
             
             return team;
         }
