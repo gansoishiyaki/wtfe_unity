@@ -9,6 +9,7 @@ using IRepository;
 public class Registory
 {
     public ICharacterService chara;
+    public IMissionService mission;
 
     public Registory(
         IResource resource,
@@ -17,5 +18,7 @@ public class Registory
     {
         var storeChara = new DataStore.JSON.CharacterRepository(store);
         chara = new CharacterService(resource, storeChara);
+
+        mission = new MissionService(resource, storeChara);
     }
 }

@@ -8,6 +8,10 @@ public static class Dummy
         chara.Create("hyrain");
 
         var hyrain = registory.chara.Get("hyrain");
-        Debug.Log(hyrain);
+        Debug.Log(hyrain.name);
+
+        var testMission = registory.mission.Get("test");
+        Temporary.Main.mission = testMission;
+        Debug.Log(testMission.name);
     }
 }

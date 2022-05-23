@@ -6,16 +6,13 @@ namespace DataStore.JSON
 {
     public class Handler : IStore
     {
-        private string path;
         private Main data;
 
         // Repositoryから直接アクセスさせる
         public Dictionary<string, Character> characters;
 
-        public Handler(string path)
+        public Handler()
         {
-            this.path = path;
-
             // TODO: 読み込み処理
             data = new Main();
             data.characters = new List<Character>();

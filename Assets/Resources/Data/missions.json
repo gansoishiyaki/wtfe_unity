@@ -1,0 +1,43 @@
+{
+  "list": [
+    {
+      "id": "test",
+      "name": "テスト",
+      "stages": [
+        {
+          "map": "tranningroom",
+          "teams": [
+            {
+              "charas": [
+                {
+                  "pos": {
+                    "x": 3,
+                    "y": 1
+                  }
+                },
+                {
+                  "pos": {
+                    "x": 2,
+                    "y": 1
+                  }
+                }
+              ]
+            },
+            {
+              "is_player": false,
+              "charas": [
+                {
+                  "id": "hyrain",
+                  "pos": {
+                    "x": 3,
+                    "y": 6
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

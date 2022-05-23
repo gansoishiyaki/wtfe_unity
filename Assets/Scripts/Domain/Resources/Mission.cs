@@ -7,10 +7,10 @@ namespace Resource
     /// ステータス
     /// </summary>
     [Serializable]
-    public class Stage
+    public class Mission : JSONSerializer.Base
     {
-        public string map;
+        public string name;
 
-        public List<StageTeam> teams;
+        public List<Stage> stages;
     }
 }

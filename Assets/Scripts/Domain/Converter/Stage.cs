@@ -13,8 +13,6 @@ namespace Domain.Converter
         )
         {
             var stage = new Stage();
-            stage.id = resourceStage.id;
-            stage.name = resourceStage.name;
             stage.mapFile = $"{Config.MapDir}/{resourceStage.map}";
 
             stage.teams = resourceStage.teams.ConvertAll(t => t.ToModel(resource, storeChara));

@@ -10,12 +10,12 @@ namespace Resource
     public class JSONHandler : IRepository.IResource
     {
         private Dictionary<string, Character> charas;
-        private Dictionary<string, Stage> stages;
+        private Dictionary<string, Mission> missions;
 
-        public JSONHandler(string resourceDirctory)
+        public JSONHandler()
         {
-            charas = load<Character>($"{resourceDirctory}/characters");
-            stages = load<Stage>($"{resourceDirctory}/stages");
+            charas = load<Character>($"{Config.ResourceDir}/characters");
+            missions = load<Mission>($"{Config.ResourceDir}/missions");
         }
 
         Dictionary<string, Character> IRepository.IResource.Characters()
@@ -23,9 +23,9 @@ namespace Resource
             return charas;
         }
 
-        Dictionary<string, Stage> IRepository.IResource.Stages()
+        Dictionary<string, Mission> IRepository.IResource.Missions()
         {
-            return stages;
+            return missions;
         }
 
         /// <summary>
