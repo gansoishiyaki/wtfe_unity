@@ -10,5 +10,6 @@ namespace DataStore.JSON
     public class Main
     {
         public List<Character> characters;
+        public List<Team> teams;
     }
 }

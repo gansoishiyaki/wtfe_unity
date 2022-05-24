@@ -30,6 +30,9 @@ namespace Resource
         // 成長率
         public CharacterRate rate;
 
+        // 敵時のデフォルトステータス
+        public StaticState enemy;
+
         // 属性
         public List<string> attributes = new List<string>();
         public List<string> triggers = new List<string>();

@@ -35,6 +35,44 @@ namespace Domain.Converter
             return chara;
         }
 
+        public static Character forStageCharacter(this Resource.Character resource, Resource.StageCharacter stageCharacter)
+        {
+            var chara = new Character();
+            chara.id = resource.id;
+            chara.name = resource.name;
+            chara.moveType = resource.move_type.ToEnum(MoveType.walk);
+            chara.attributes = resource
+                .attributes
+                .ConvertAll(a => a.ToEnum(CharacterAttribute.none))
+                .FindAll(a => a != CharacterAttribute.none);
+
+            chara.level = resource.enemy.level;
+            chara.maxhp = resource.enemy.maxhp;
+            chara.hp = resource.enemy.hp == 0 ? chara.maxhp : resource.enemy.hp;
+            chara.atk = resource.enemy.atk;
+            chara.def = resource.enemy.def;
+            chara.teh = resource.enemy.teh;
+            chara.spd = resource.enemy.spd;
+            chara.luk = resource.enemy.luk;
+            chara.move = resource.move;
+            chara.conducting = resource.enemy.conducting;
+
+            if (stageCharacter.has_state)
+            {
+                chara.level = stageCharacter.state.level;
+                chara.maxhp = stageCharacter.state.maxhp;
+                chara.hp = stageCharacter.state.hp == 0 ? chara.maxhp : stageCharacter.state.hp;
+                chara.atk = stageCharacter.state.atk;
+                chara.def = stageCharacter.state.def;
+                chara.teh = stageCharacter.state.teh;
+                chara.spd = stageCharacter.state.spd;
+                chara.luk = stageCharacter.state.luk;
+                chara.conducting = stageCharacter.state.conducting;
+            }
+
+            return chara;
+        }
+
         /// <summary>
         /// リソースからストアデータへの変換
         /// </summary>

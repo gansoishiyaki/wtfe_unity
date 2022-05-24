@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 
-namespace Domain
+namespace DataStore
 {
     [Serializable]
     public class Team
@@ -9,5 +9,6 @@ namespace Domain
         public string id;
         public string name;
 
+        public List<string> characters;
     }
 }

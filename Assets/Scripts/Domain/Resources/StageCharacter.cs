@@ -10,7 +10,9 @@ namespace Resource
     {
         public string id = "";
         public Position pos;
-        public bool has_staticstate = false;
+
+        // ステータスの上書きがあるか
+        public bool has_state = false;
         public StaticState state;
     }
 }

@@ -17,7 +17,9 @@ public class StageViewModel
     // GameObject
     private GameObject stageObj;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// コンストラクタ
+    /// </summary>
     public StageViewModel()
     {
         var missionService = Main.Get.Registory.mission;
@@ -34,5 +36,8 @@ public class StageViewModel
         // ステージ作成
         var obj = Resources.Load<GameObject>(model.mapFile);
         stageObj = createChild(obj);
+
+        // エネミー生成
+
     }
 }

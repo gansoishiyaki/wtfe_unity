@@ -8,23 +8,35 @@ namespace Domain.Converter
         public static StageTeam ToModel(
             this Resource.StageTeam resourceStage,
             IRepository.IResource resource,
-            IRepository.DataStore.ICharacter storeChara
+            IRepository.DataStore.ICharacter storeCharacter,
+            DataStore.Team playerTeam
         )
         {
             var team = new StageTeam();
             team.isPlayer = resourceStage.is_player;
 
-            if(team.isPlayer)
+            var count = 0;
+            team.characters = resourceStage.charas.ConvertAll(c =>
             {
-                // TODO: プレイヤーのチーム反映
-            }
-            else
-            {
-                team.characters = resourceStage.charas
-                    .ConvertAll(
-                    c => c.ToModel(resource.Characters()[c.id], storeChara.Get(c.id))
-                );
-            }
+                // 固定値が存在する、またはプレイヤーチーム以外の場合
+                if (c.has_state || !team.isPlayer)
+                {
+                    // リソースからキャラ生成
+                    var resourceChara = resource.Characters()[c.id];
+                    return c.WithStaticState(resourceChara);
+                }
+                else
+                {
+                    if (playerTeam.characters.Count == count)
+                        return null;
+                    // リソースとデータストアからキャラ生成
+                    var id = playerTeam.characters[count];
+                    var storeChara = storeCharacter.Get(id);
+                    var resourceChara = resource.Characters()[id];
+                    count++;
+                    return c.WithPlayer(resourceChara, storeChara);
+                }
+            }).FindAll(c => c != null);
             
             return team;
         }

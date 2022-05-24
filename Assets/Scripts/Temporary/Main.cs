@@ -4,5 +4,6 @@ namespace Temporary
     {
         public static Domain.Mission mission;
         public static int stageNum = 0;
+        public static Domain.Team team;
     }
 }
