@@ -4,7 +4,10 @@ using UnityEngine;
 
 namespace Component
 {
-    public class StageController : MonoBehaviour
+    /// <summary>
+    /// ステージ操作
+    /// </summary>
+    public class StageComponent : MonoBehaviour
     {
         private StageViewModel viewModel;
 
@@ -14,9 +17,12 @@ namespace Component
             viewModel = new StageViewModel();
 
             // delegate
-            viewModel.createChild = delegate (GameObject obj)
+            viewModel.createChild = delegate (GameObject obj, GameObject parent)
             {
-                return Instantiate(obj, gameObject.transform);
+                // 親指定がない場合はStageの子
+                if(!parent)
+                    parent = gameObject;
+                return Instantiate(obj, parent.transform);
             };
 
            viewModel.SetUp();

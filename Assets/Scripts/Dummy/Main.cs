@@ -9,7 +9,6 @@ public static class Dummy
         chara.Create("hyrain");
 
         var hyrain = registory.chara.Get("hyrain");
-        Debug.Log(hyrain.name);
 
         registory.team.SetCharacters("test", new List<string> { "hyrain" });
         registory.team.SetName("test", "テストチーム");
@@ -17,6 +16,5 @@ public static class Dummy
 
         var testMission = registory.mission.Get("test");
         Temporary.Main.mission = testMission;
-        Debug.Log(testMission.name); ;
     }
 }

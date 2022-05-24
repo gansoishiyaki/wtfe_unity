@@ -1,3 +1,5 @@
+using System;
+
 namespace Domain.Converter
 {
     /// <summary>
@@ -14,6 +16,9 @@ namespace Domain.Converter
         {
             var team = new StageTeam();
             team.isPlayer = resourceStage.is_player;
+            team.group_id = resourceStage.group_id;
+            if (team.group_id == 0)
+                team.group_id = int.MaxValue.RandomInt();
 
             var count = 0;
             team.characters = resourceStage.charas.ConvertAll(c =>
@@ -27,8 +32,10 @@ namespace Domain.Converter
                 }
                 else
                 {
+                    // カウントオーバー時は終了
                     if (playerTeam.characters.Count == count)
                         return null;
+
                     // リソースとデータストアからキャラ生成
                     var id = playerTeam.characters[count];
                     var storeChara = storeCharacter.Get(id);
