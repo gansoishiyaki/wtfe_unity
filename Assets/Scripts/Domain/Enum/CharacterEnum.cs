@@ -2,5 +2,5 @@
 
 public enum CharacterEnum
 {
-    hyrain
+    hyrein
 }

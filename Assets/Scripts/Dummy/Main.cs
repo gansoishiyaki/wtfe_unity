@@ -6,11 +6,11 @@ public static class Dummy
     public static void CreateDummyData(Registory registory)
     {
         var chara = registory.chara;
-        chara.Create("hyrain");
+        chara.Create("hyrein");
 
-        registory.chara.Get("hyrain");
+        registory.chara.Get("hyrein");
 
-        registory.team.SetCharacters("test", new List<string> { "hyrain" });
+        registory.team.SetCharacters("test", new List<string> { "hyrein" });
         registory.team.SetName("test", "テストチーム");
         Temporary.Main.team = registory.team.Get("test");
 

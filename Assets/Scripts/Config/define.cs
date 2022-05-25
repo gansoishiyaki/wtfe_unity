@@ -10,5 +10,5 @@ public static class Config
     public static readonly string SystemDir = "Prehabs/System";
 
     // image
-    public static readonly string StageCharaDir = "Images/chara/map";
+    public static readonly string StageCharaDir = "Images/Chara/Map";
 }
