@@ -36,5 +36,20 @@ namespace Component
 
             viewModel.SetUp();
         }
+
+        void OnMouseDown()
+        {
+            viewModel.tapStart();
+        }
+
+        void OnMouseUp()
+        {
+            viewModel.tapEnd();
+        }
+
+        private void OnMouseDrag()
+        {
+            viewModel.drag();
+        }
     }
 }

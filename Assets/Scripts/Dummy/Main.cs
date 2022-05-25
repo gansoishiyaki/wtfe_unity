@@ -8,7 +8,7 @@ public static class Dummy
         var chara = registory.chara;
         chara.Create("hyrain");
 
-        var hyrain = registory.chara.Get("hyrain");
+        registory.chara.Get("hyrain");
 
         registory.team.SetCharacters("test", new List<string> { "hyrain" });
         registory.team.SetName("test", "テストチーム");
