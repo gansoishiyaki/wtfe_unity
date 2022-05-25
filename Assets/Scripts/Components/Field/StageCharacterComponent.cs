@@ -37,6 +37,9 @@ namespace Component
             viewModel.SetUp();
         }
 
+        //------------------------------------------
+        // タップ処理
+        //------------------------------------------
         void OnMouseDown()
         {
             viewModel.tapStart();
@@ -49,7 +52,12 @@ namespace Component
 
         private void OnMouseDrag()
         {
-            viewModel.drag();
+            viewModel.Drag();
+
+            // TODO: 移動、攻撃判定
+            //var worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //var grid = GetComponentInParent<Grid>();
+            //var tilePos = grid.WorldToCell(worldPos);
         }
     }
 }
