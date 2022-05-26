@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 611922234}
   - component: {fileID: 611922233}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
